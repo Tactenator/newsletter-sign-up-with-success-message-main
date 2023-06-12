@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+  <link rel="stylesheet" href="./styles.css">
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+</head>
+<body>
+  <div class="container">
+    <div class="main-container">
+      <div class="info-container">
+        <h1>Stay updated!</h1>
+        <p>Join 60,000+ product managers receiving monthly updates on:</p>
+        <ul>
+          <li><img src="./assets/images/icon-list.svg" alt="checkmark"> Discovery and building what matters</li>
+          <li><img src="./assets/images/icon-list.svg" alt="checkmark">Measuring to ensure updates are a success</li>
+          <li><img src="./assets/images/icon-list.svg" alt="checkmark">And much more!</li>
+        </ul>
+        <form>
+          <label name="email">Email address</label><br>
+          <input type="email" name="email" placeholder="email@company.com">
+        </form>
+        <button id="mainButton" type="submit">Subscribe to monthly newsletter</button>
+      </div>
+      <div class="img-container">
+        <img src="./assets/images/illustration-sign-up-desktop.svg" alt="practice">
+      </div>
+      <div class=" mobile-img-container">
+        <img src="./assets/images/illustration-sign-up-mobile.svg" alt="practice">
+      </div>
+    </div>
+  
+    <div class="success-container">
+      <img src="./assets/images/icon-success.svg" alt="large orange checkmark">
+      <h1>Thanks for subscribing!</h1>
+      <p>  
+        A confirmation email has been sent to <b>ash@loremcompany.com</b>. 
+        Please open it and click the button inside to confirm your subscription.
+      </p>
+      <button id="successButton">Dismiss message</button>
+    </div>  
+  </div>  
+</body>
+<script>
+  const mainButton = document.getElementById('mainButton')
+  const successButton = document.getElementById('successButton')
+
+  const mainContainer = document.querySelector('.main-container')
+  const successContainer = document.querySelector('.success-container')
+
+  mainButton.addEventListener('click', () => {
+    mainContainer.style.display = "none";
+    successContainer.style.display = "flex"; 
+  })
+
+  successButton.addEventListener('click', () => {
+    mainContainer.style.display = "flex";
+    successContainer.style.display = "none"; 
+  })
+</script>
+</html>
