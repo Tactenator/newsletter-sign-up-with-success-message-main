@@ -25,7 +25,7 @@ p {
 }
 
 h1 {
-    font-size: 3.3rem;
+    font-size: calc(3vw * 1.2);
     font-family: Roboto-Bold, sans-serif;
     color: hsl(234, 29%, 20%);
 }
@@ -41,6 +41,7 @@ h1 {
     background: hsl(0, 0%, 100%); 
     border-radius: 15px;
     display: flex;
+    flex-direction: row; 
     padding: 1rem 0; 
     height: 75vh;
 }
@@ -50,13 +51,17 @@ h1 {
 }
 
 .info-container {
-    margin: 2rem 0;
-    display: flex; 
-    flex-direction: column;
-    gap: 2rem;
     padding: 1.5rem;
     margin-left: 1.5rem;
-    width: 45%; 
+    width: 45%;  
+    max-height: auto; 
+}
+
+.info {
+    display: flex; 
+    flex-direction: column;
+    gap: calc(100vw / 45);
+    max-height: inherit;
 }
 
 ul {
@@ -99,6 +104,7 @@ button {
     background: hsl(234, 29%, 20%);
     color: #fff;
     transition: 0.3s;
+    font-family: Roboto-Bold, sans-serif;
 }
 
 button:hover {
@@ -108,8 +114,9 @@ button:hover {
 }
 
 .img-container img {
+    max-width: 100%; 
+    display: block; 
     height: 100%;
-    width: 100%;
 }
 
 .success-container {
@@ -136,3 +143,47 @@ button:hover {
 .mobile-img-container {
     display: none;
 }
+
+@media screen and (max-width: 600px) {
+
+    h1 {
+        font-size: 2.5rem;
+    }
+    .main-container {
+        flex-direction: column;
+        height: 100vh; 
+        width: 100%;
+        padding: 0 0; 
+        justify-content: initial;
+    }
+
+    .img-container {
+        display: none;
+    }
+
+    .mobile-img-container{
+        display: block;
+        object-fit: cover;
+        width: 100vw;
+        height: auto;
+        text-align: center;
+        order: -1; 
+    }
+
+    .info-container {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .info {
+        gap: 2.3rem;
+    }
+
+    ul {
+        gap: 1rem;
+    }
+
+    button {
+        padding: 1.3rem;
+    }
+  }
